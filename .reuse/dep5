@@ -1,0 +1,10 @@
+Format: https://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
+Upstream-Name: guix-foundation
+Upstream-Contact: Foundation Devices, Inc. <hello@foundation.xyz>
+Source: https://github.com/Foundation-Devices/guix-foundation
+
+# Sample paragraph, commented out:
+#
+# Files: src/*
+# Copyright: $YEAR $NAME <$CONTACT>
+# License: ...

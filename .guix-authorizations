@@ -1,0 +1,11 @@
+;;; SPDX-FileCopyrightText: © 2023 Foundation Devices, Inc. <hello@foundationdevices.com>
+;;; SPDX-License-Identifier: GPL-3.0-or-later
+;;;
+;;; This is the list of OpenPGP keys currently authorized to sign commits in
+;;; this repository.
+
+(authorizations
+ (version 0)
+  
+ (("9D54 3ADF 6E90 348C C606  90A9 6279 AEC2 0A95 24EC"
+  (name "jeandudey"))))
