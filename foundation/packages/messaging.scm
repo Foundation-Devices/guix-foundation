@@ -13,7 +13,7 @@
 (define-public roam
   (package
     (name "roam")
-    (version "130.0.0-beta001")
+    (version "131.1.0-beta001")
     (source (origin
               (method url-fetch)
               ;; Taken from the Arch Linux's PKGBUILD for Roam.
@@ -25,7 +25,7 @@
                                   version "-roam_" version "_amd64.deb"))
               (sha256
                (base32
-                "179378d5igk30c28knqhl373bslb3w50848d9y3g0iv8q51njhiy"))))
+                "1lf93s7j80f401rwwx5zgflbhnf21gbwi26vbzrs9z1939x8xm91"))))
     (build-system chromium-binary-build-system)
     (arguments
      (list #:validate-runpath? #f
