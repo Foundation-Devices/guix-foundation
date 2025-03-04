@@ -2,6 +2,7 @@
 ;;; SPDX-License-Identifier: GPL-3.0-or-later
 
 (define-module (foundation packages messaging)
+  #:use-module (gnu packages freedesktop)
   #:use-module (gnu packages gnome)
   #:use-module (guix build-system trivial)
   #:use-module (guix download)
@@ -13,7 +14,7 @@
 (define-public roam
   (package
     (name "roam")
-    (version "147.0.0-beta001")
+    (version "150.0.0-beta001")
     (source (origin
               (method url-fetch)
               ;; Taken from the Arch Linux's PKGBUILD for Roam.
@@ -25,7 +26,7 @@
                                   version "-roam_" version "_amd64.deb"))
               (sha256
                (base32
-                "0n1m9fzi6ajf7c3wpx8sdh8296hb633mpn2xxc7dc8v86lijbjr7"))))
+                "1m0vbni1sc6fialf63yy7azr36k36bwmqh85zkxxs62bbagbx3dj"))))
     (build-system chromium-binary-build-system)
     (arguments
      (list #:validate-runpath? #f
@@ -65,13 +66,10 @@
                          (wrapper (string-append #$output "/bin/roam")))
                      (mkdir-p (dirname wrapper))
                      (make-wrapper wrapper bin
-                                   `("LD_LIBRARY_PATH" ":"
-                                     prefix
-                                     (,(string-join
-                                        (list
-                                         (string-append #$output "/lib/roam"))
-                                        ":"))))))))))
-    (inputs (list libsecret))
+                      `("LD_LIBRARY_PATH" ":" prefix
+                        (,(string-join (list (string-append #$output "/lib/roam"))
+                                       ":"))))))))))
+    (inputs (list libsecret xdg-utils))
     (supported-systems '("x86_64-linux"))
     (home-page "https://ro.am")
     (synopsis "Cloud based offices")
