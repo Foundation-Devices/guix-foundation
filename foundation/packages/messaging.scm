@@ -14,7 +14,7 @@
 (define-public roam
   (package
     (name "roam")
-    (version "150.0.0-beta001")
+    (version "154.0.0-beta001")
     (source (origin
               (method url-fetch)
               ;; Taken from the Arch Linux's PKGBUILD for Roam.
@@ -26,7 +26,7 @@
                                   version "-roam_" version "_amd64.deb"))
               (sha256
                (base32
-                "1m0vbni1sc6fialf63yy7azr36k36bwmqh85zkxxs62bbagbx3dj"))))
+                "1aq4bwr462qrv9qwqqdj04wpx1lpava8jf8caaadm3y3h2b1nalw"))))
     (build-system chromium-binary-build-system)
     (arguments
      (list #:validate-runpath? #f
@@ -40,7 +40,9 @@
                "usr/lib/roam/libGLESv2.so"
                "usr/lib/roam/libvk_swiftshader.so"
                #$(string-append "usr/lib/roam/resources/app.asar.unpacked"
-                                "/.webpack/main/Keytar.node")
+                                "/.webpack/main/DoNotDisturb.node")
+               #$(string-append "usr/lib/roam/resources/app.asar.unpacked"
+                                "/.webpack/main/IdleMonitor.node")
                #$(string-append "usr/lib/roam/resources/app.asar.unpacked"
                                 "/.webpack/main/OtherApplicationMonitor.node")
                #$(string-append "usr/lib/roam/resources/app.asar.unpacked"
