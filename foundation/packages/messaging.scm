@@ -14,7 +14,7 @@
 (define-public roam
   (package
     (name "roam")
-    (version "162.0.0-beta001")
+    (version "175.1.1-beta001")
     (source (origin
               (method url-fetch)
               ;; Taken from the Arch Linux's PKGBUILD for Roam.
@@ -26,7 +26,7 @@
                                   version "-roam_" version "_amd64.deb"))
               (sha256
                (base32
-                "0v9a2fbgjf1n4n80jysp8l5mx4kkpbl3dnvb44hqnqkknxj91lda"))))
+                "0cd05zsm9f16qi1p107aivg7xzfzgwwpgkhz4wswrq1qvs8ax9lj"))))
     (build-system chromium-binary-build-system)
     (arguments
      (list #:validate-runpath? #f
@@ -40,13 +40,13 @@
                "usr/lib/roam/libGLESv2.so"
                "usr/lib/roam/libvk_swiftshader.so"
                #$(string-append "usr/lib/roam/resources/app.asar.unpacked"
+                                "/.webpack/main/DisplaySourceMonitor.node")
+               #$(string-append "usr/lib/roam/resources/app.asar.unpacked"
                                 "/.webpack/main/DoNotDisturb.node")
                #$(string-append "usr/lib/roam/resources/app.asar.unpacked"
                                 "/.webpack/main/IdleMonitor.node")
                #$(string-append "usr/lib/roam/resources/app.asar.unpacked"
                                 "/.webpack/main/OtherApplicationMonitor.node")
-               #$(string-append "usr/lib/roam/resources/app.asar.unpacked"
-                                "/.webpack/main/ScreenShareHighlight.node")
                #$(string-append "usr/lib/roam/resources/app.asar.unpacked"
                                 "/.webpack/main/SystemPermissionTutorial.node"))
 
